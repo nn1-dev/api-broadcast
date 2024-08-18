@@ -109,6 +109,9 @@ const handlerPost = async (request: Request) => {
     );
   }
 
+  const sentSuccess: string[] = [];
+  const sentError: string[] = [];
+
   if (shouldBroadcastNewsletter) {
     const template =
       TEMPLATE_MAPPER_NEWSLETTER[
@@ -129,23 +132,22 @@ const handlerPost = async (request: Request) => {
     );
 
     console.log({ entriesLength: entries.length });
-    console.log({ entries });
-    // for (const entry of entries) {
-    //   const email = template.template({
-    //     unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${entry?.key[1]}`,
-    //   });
-    //   const { error } = await resend.emails.send({
-    //     from: "NN1 Dev Club <club@nn1.dev>",
-    //     to: entry.value.email,
-    //     subject: template.subject,
-    //     html: email.html,
-    //     text: email.text,
-    //   });
+    console.log({ entries: entries.map((entry) => entry.value.email) });
 
-    //   error
-    //     ? console.error(error)
-    //     : console.log(`Email successfully sent to ${entry.value.email}`);
-    // }
+    for (const entry of entries) {
+      const email = template.template({
+        unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${entry?.key[1]}`,
+      });
+      const { error } = await resend.emails.send({
+        from: "NN1 Dev Club <club@nn1.dev>",
+        to: entry.value.email,
+        subject: template.subject,
+        html: email.html,
+        text: email.text,
+      });
+
+      (error ? sentError : sentSuccess).push(entry.value.email);
+    }
   } else {
     const template =
       TEMPLATE_MAPPER_EVENT[
@@ -155,29 +157,30 @@ const handlerPost = async (request: Request) => {
     const entries = await fetchMembersEvent(body.eventId);
 
     console.log({ entriesLength: entries.length });
-    console.log({ entries });
+    console.log({ entries: entries.map((entry) => entry.value.email) });
 
-    // for (const entry of entries) {
-    //   const email = template.template();
-    //   const { error } = await resend.emails.send({
-    //     from: "NN1 Dev Club <club@nn1.dev>",
-    //     to: entry.value.email,
-    //     subject: template.subject,
-    //     html: email.html,
-    //     text: email.text,
-    //   });
+    for (const entry of entries) {
+      const email = template.template();
+      const { error } = await resend.emails.send({
+        from: "NN1 Dev Club <club@nn1.dev>",
+        to: entry.value.email,
+        subject: template.subject,
+        html: email.html,
+        text: email.text,
+      });
 
-    //   error
-    //     ? console.error(error)
-    //     : console.log(`Email successfully sent to ${entry.value.email}`);
-    // }
+      (error ? sentError : sentSuccess).push(entry.value.email);
+    }
   }
 
   return Response.json(
     {
       status: "success",
       statusCode: 200,
-      data: "Broadcast successful.",
+      data: {
+        sentSuccess,
+        sentError,
+      },
       error: null,
     },
     { status: 200 },
