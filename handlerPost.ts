@@ -74,6 +74,7 @@ const fetchMembersNewsletter = async () => {
 type BodyNewsletter = {
   template: keyof typeof TEMPLATE_MAPPER_NEWSLETTER;
   audience: "newsletter";
+  excludeMembersEventId?: number;
 };
 
 type BodyEvent = {
@@ -114,24 +115,37 @@ const handlerPost = async (request: Request) => {
         body.template as keyof typeof TEMPLATE_MAPPER_NEWSLETTER
       ];
 
-    const entries = await fetchMembersNewsletter();
+    const membersNewsletter = await fetchMembersNewsletter();
+    const membersExcluded = body.excludeMembersEventId
+      ? await fetchMembersEvent(body.excludeMembersEventId)
+      : [];
 
-    for (const entry of entries) {
-      const email = template.template({
-        unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${entry?.key[1]}`,
-      });
-      const { error } = await resend.emails.send({
-        from: "NN1 Dev Club <club@nn1.dev>",
-        to: entry.value.email,
-        subject: template.subject,
-        html: email.html,
-        text: email.text,
-      });
+    const entries = membersNewsletter.filter(
+      (memberNewsletter) =>
+        !membersExcluded.some(
+          (memberEvent) =>
+            memberEvent.value.email === memberNewsletter.value.email,
+        ),
+    );
 
-      error
-        ? console.error(error)
-        : console.log(`Email successfully sent to ${entry.value.email}`);
-    }
+    console.log({ entriesLength: entries.length });
+    console.log({ entries });
+    // for (const entry of entries) {
+    //   const email = template.template({
+    //     unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${entry?.key[1]}`,
+    //   });
+    //   const { error } = await resend.emails.send({
+    //     from: "NN1 Dev Club <club@nn1.dev>",
+    //     to: entry.value.email,
+    //     subject: template.subject,
+    //     html: email.html,
+    //     text: email.text,
+    //   });
+
+    //   error
+    //     ? console.error(error)
+    //     : console.log(`Email successfully sent to ${entry.value.email}`);
+    // }
   } else {
     const template =
       TEMPLATE_MAPPER_EVENT[
@@ -139,22 +153,24 @@ const handlerPost = async (request: Request) => {
       ];
 
     const entries = await fetchMembersEvent(body.eventId);
+
+    console.log({ entriesLength: entries.length });
     console.log({ entries });
 
-    for (const entry of entries) {
-      const email = template.template();
-      const { error } = await resend.emails.send({
-        from: "NN1 Dev Club <club@nn1.dev>",
-        to: entry.value.email,
-        subject: template.subject,
-        html: email.html,
-        text: email.text,
-      });
+    // for (const entry of entries) {
+    //   const email = template.template();
+    //   const { error } = await resend.emails.send({
+    //     from: "NN1 Dev Club <club@nn1.dev>",
+    //     to: entry.value.email,
+    //     subject: template.subject,
+    //     html: email.html,
+    //     text: email.text,
+    //   });
 
-      error
-        ? console.error(error)
-        : console.log(`Email successfully sent to ${entry.value.email}`);
-    }
+    //   error
+    //     ? console.error(error)
+    //     : console.log(`Email successfully sent to ${entry.value.email}`);
+    // }
   }
 
   return Response.json(
