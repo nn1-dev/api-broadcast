@@ -19,6 +19,7 @@
   },
   "tasks": {
     "dev": "deno run --watch --allow-env --allow-net --env index.ts",
+    "dev:reload": "deno run --watch --allow-env --allow-net --env --reload --lock-write index.ts",
     "start": "deno run --allow-env --allow-net --env index.ts"
   }
 }

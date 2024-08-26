@@ -1,21 +1,26 @@
 import { Resend } from "npm:resend";
 import { renderEmail_2024_07_24 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-07-24.tsx";
+import { renderEmail_2024_08_27 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
 const TEMPLATE_MAPPER_NEWSLETTER: Record<
   string,
   {
-    template: (props: { unsubscribeUrl: string }) => {
+    template: (props: { unsubscribeUrl: string }) => Promise<{
       html: string;
       text: string;
-    };
+    }>;
     subject: string;
   }
 > = {
   "2024-07-24": {
     template: renderEmail_2024_07_24,
     subject: "NN1 Dev Club #3",
+  },
+  "2024-08-27": {
+    template: renderEmail_2024_08_27,
+    subject: "Co-working days & NN1 Dev Club #3",
   },
 };
 
@@ -135,7 +140,7 @@ const handlerPost = async (request: Request) => {
     console.log({ entries: entries.map((entry) => entry.value.email) });
 
     for (const entry of entries) {
-      const email = template.template({
+      const email = await template.template({
         unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${entry?.key[1]}`,
       });
       const { error } = await resend.emails.send({
