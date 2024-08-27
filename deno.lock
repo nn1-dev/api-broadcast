@@ -492,15 +492,14 @@
     }
   },
   "redirects": {
-    "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
-    "https://esm.sh/v128/@types/react@~18.3/jsx-runtime~.d.ts": "https://esm.sh/v128/@types/react@18.2.38/jsx-runtime~.d.ts"
+    "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime"
   },
   "remote": {
     "https://esm.sh/react@18.3.1/jsx-runtime": "f47f11639cc0531ad2f1e0f6334d9ae7a8d906c905d9b79cb2e8cd4331bc5b10",
     "https://esm.sh/stable/react@18.3.1/denonext/jsx-runtime.js": "5ff1e02a3bb5c69dd3535d77054b182f1ea51c5eeaf24a396984f6b7012c2716",
     "https://esm.sh/stable/react@18.3.1/denonext/react.mjs": "fc048ffc55366baf7669519127d186761db72046e2bebf35fe8d0de3964defa3",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-07-24.tsx": "7fe5094587180079687b3904c95546f429c73374a35838bb01b5bf3d5fc0d7df",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx": "4a2e8d732bc0e48cb867027c20562d291ce01941290718f8d4c0cf3d992470eb",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx": "3564edd6f43fcc08e000e2e1871b42f698d5187b73c83de461de331d062a63f9",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/style.tsx": "8d8a8080ca57d4d1896e9d530104b2e1dce18cca92380026bf70c9eab3b0e713"
   },
   "workspace": {
