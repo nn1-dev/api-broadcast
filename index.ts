@@ -1,4 +1,10 @@
+import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
 import handlerPost from "./handlerPost.ts";
+
+Sentry.init({
+  dsn: Deno.env.get("SENTRY_DSN"),
+  tracesSampleRate: 1.0,
+});
 
 const HANDLER_MAPPER = {
   POST: handlerPost,

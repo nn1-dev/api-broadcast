@@ -11,7 +11,7 @@
       "npm:@react-email/html": "npm:@react-email/html@0.0.10_react@18.3.1",
       "npm:@react-email/img": "npm:@react-email/img@0.0.10_react@18.3.1",
       "npm:@react-email/link": "npm:@react-email/link@0.0.10_react@18.3.1",
-      "npm:@react-email/render": "npm:@react-email/render@1.0.0_react@18.3.1_react-dom@18.3.1__react@18.3.1",
+      "npm:@react-email/render": "npm:@react-email/render@1.0.1_react@18.3.1_react-dom@18.3.1__react@18.3.1",
       "npm:@react-email/text": "npm:@react-email/text@0.0.10_react@18.3.1",
       "npm:react": "npm:react@18.3.1",
       "npm:resend": "npm:resend@4.0.0_react@18.3.1"
@@ -100,8 +100,8 @@
           "react-promise-suspense": "react-promise-suspense@0.3.4"
         }
       },
-      "@react-email/render@1.0.0_react@18.3.1_react-dom@18.3.1__react@18.3.1": {
-        "integrity": "sha512-seN2p3JRUSZhwIUiymh9N6ZfhRZ14ywOraQqAokY63DkDeHZW2pA2a6nWpNc/igfOcNyt09Wsoi1Aj0esxhdzw==",
+      "@react-email/render@1.0.1_react@18.3.1_react-dom@18.3.1__react@18.3.1": {
+        "integrity": "sha512-W3gTrcmLOVYnG80QuUp22ReIT/xfLsVJ+n7ghSlG2BITB8evNABn1AO2rGQoXuK84zKtDAlxCdm3hRyIpZdGSA==",
         "dependencies": {
           "html-to-text": "html-to-text@9.0.5",
           "js-beautify": "js-beautify@1.15.1",
@@ -495,6 +495,7 @@
     "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime"
   },
   "remote": {
+    "https://deno.land/x/sentry@8.27.0/index.mjs": "8306208669d93169c864590efb2c291154f1beb9030c52f5114ca1f8ce3eca75",
     "https://esm.sh/react@18.3.1/jsx-runtime": "f47f11639cc0531ad2f1e0f6334d9ae7a8d906c905d9b79cb2e8cd4331bc5b10",
     "https://esm.sh/stable/react@18.3.1/denonext/jsx-runtime.js": "5ff1e02a3bb5c69dd3535d77054b182f1ea51c5eeaf24a396984f6b7012c2716",
     "https://esm.sh/stable/react@18.3.1/denonext/react.mjs": "fc048ffc55366baf7669519127d186761db72046e2bebf35fe8d0de3964defa3",
