@@ -492,13 +492,15 @@
     }
   },
   "redirects": {
-    "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime"
+    "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "https://esm.sh/v128/@types/react@~18.3/jsx-runtime~.d.ts": "https://esm.sh/v128/@types/react@18.2.38/jsx-runtime~.d.ts"
   },
   "remote": {
     "https://deno.land/x/sentry@8.27.0/index.mjs": "8306208669d93169c864590efb2c291154f1beb9030c52f5114ca1f8ce3eca75",
     "https://esm.sh/react@18.3.1/jsx-runtime": "f47f11639cc0531ad2f1e0f6334d9ae7a8d906c905d9b79cb2e8cd4331bc5b10",
     "https://esm.sh/stable/react@18.3.1/denonext/jsx-runtime.js": "5ff1e02a3bb5c69dd3535d77054b182f1ea51c5eeaf24a396984f6b7012c2716",
     "https://esm.sh/stable/react@18.3.1/denonext/react.mjs": "fc048ffc55366baf7669519127d186761db72046e2bebf35fe8d0de3964defa3",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-19.tsx": "a6aa5867232dc9c501ab185d85c68480c35523dd9ec0736adab9ad182ef55481",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-07-24.tsx": "7fe5094587180079687b3904c95546f429c73374a35838bb01b5bf3d5fc0d7df",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx": "5d516e409af4e1c1ce04541d8e23282fa33f42acd3f00c84c1290a15e5b6d3c6",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/style.tsx": "8d8a8080ca57d4d1896e9d530104b2e1dce18cca92380026bf70c9eab3b0e713"
