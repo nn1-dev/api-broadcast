@@ -28,10 +28,10 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
 const TEMPLATE_MAPPER_EVENT: Record<
   string,
   {
-    template: () => {
+    template: () => Promise<{
       html: string;
       text: string;
-    };
+    }>;
     subject: string;
   }
 > = {
