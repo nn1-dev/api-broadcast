@@ -171,7 +171,7 @@ const handlerPost = async (request: Request) => {
     console.log({ entries: entries.map((entry) => entry.value.email) });
 
     for (const entry of entries) {
-      const email = template.template();
+      const email = await template.template();
       const { error } = await resend.emails.send({
         from: "NN1 Dev Club <club@nn1.dev>",
         to: entry.value.email,
