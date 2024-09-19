@@ -35,7 +35,7 @@ const TEMPLATE_MAPPER_EVENT: Record<
     subject: string;
   }
 > = {
-  "2024-07-24": {
+  "2024-09-19": {
     template: renderEmail_2024_09_19,
     subject: "NN1 Dev Club #3 - We will see you in a week",
   },
