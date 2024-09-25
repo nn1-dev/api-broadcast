@@ -3,6 +3,7 @@ import { renderEmail_2024_07_24 } from "https://raw.githubusercontent.com/nn1-de
 import { renderEmail_2024_08_27 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx";
 import { renderEmail_2024_09_19 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-19.tsx";
 import { renderEmail_2024_09_24 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-09-24.tsx";
+import { renderEmail_2024_09_25 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-25.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
@@ -43,6 +44,10 @@ const TEMPLATE_MAPPER_EVENT: Record<
   "2024-09-19": {
     template: renderEmail_2024_09_19,
     subject: "NN1 Dev Club #3 - We will see you in a week",
+  },
+  "2024-09-25": {
+    template: renderEmail_2024_09_25,
+    subject: "NN1 Dev Club #3 - See you tomorrow 👋",
   },
 };
 
