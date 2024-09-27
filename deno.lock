@@ -257,7 +257,7 @@
           "jackspeak": "jackspeak@3.4.3",
           "minimatch": "minimatch@9.0.5",
           "minipass": "minipass@7.1.2",
-          "package-json-from-dist": "package-json-from-dist@1.0.0",
+          "package-json-from-dist": "package-json-from-dist@1.0.1",
           "path-scurry": "path-scurry@1.11.1"
         }
       },
@@ -353,8 +353,8 @@
           "abbrev": "abbrev@2.0.0"
         }
       },
-      "package-json-from-dist@1.0.0": {
-        "integrity": "sha512-dATvCeZN/8wQsGywez1mzHtTlP22H8OEfPrVMLNr4/eGa+ijtLn/6M5f0dY8UKNrC2O9UCU6SSoG3qRKnt7STw==",
+      "package-json-from-dist@1.0.1": {
+        "integrity": "sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==",
         "dependencies": {}
       },
       "parseley@0.12.1": {
@@ -502,6 +502,7 @@
     "https://esm.sh/stable/react@18.3.1/denonext/react.mjs": "fc048ffc55366baf7669519127d186761db72046e2bebf35fe8d0de3964defa3",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-19.tsx": "a6aa5867232dc9c501ab185d85c68480c35523dd9ec0736adab9ad182ef55481",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-25.tsx": "cbcfde2e7591b8edd34cceb38c9138c8001689e95b0613400a8a7ea5d95ff52f",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-27.tsx": "19fc7146010f31703f64d1fff4162ceec37e5b7f29d5f1270e99d48106bac318",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-07-24.tsx": "7fe5094587180079687b3904c95546f429c73374a35838bb01b5bf3d5fc0d7df",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx": "5d516e409af4e1c1ce04541d8e23282fa33f42acd3f00c84c1290a15e5b6d3c6",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-09-24.tsx": "056fb9b543da70ac848c3096a42cbac64bbebcbd498b742f06005a4ba4d6c3d4",
