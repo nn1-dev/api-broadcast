@@ -8,6 +8,7 @@ import { renderEmail_2024_09_27 } from "https://raw.githubusercontent.com/nn1-de
 import { renderEmail_2024_10_15 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-10-15.tsx";
 import { renderEmail as renderEmail_2024_10_22 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-10-22.tsx";
 import { renderEmail as renderEmail_2024_11_14 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-11-14.tsx";
+import { renderEmail as renderEmail_2024_11_26 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-11-26.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
@@ -44,6 +45,10 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
   "2024-11-14": {
     template: renderEmail_2024_11_14,
     subject: "Last meet-up of 2024, January event, Discord server and more…",
+  },
+  "2024-11-26": {
+    template: renderEmail_2024_11_26,
+    subject: "Two days to go!",
   },
 };
 
@@ -154,10 +159,9 @@ const handlerPost = async (request: Request) => {
   const sentError: string[] = [];
 
   if (shouldBroadcastNewsletter) {
-    const template =
-      TEMPLATE_MAPPER_NEWSLETTER[
-        body.template as keyof typeof TEMPLATE_MAPPER_NEWSLETTER
-      ];
+    const template = TEMPLATE_MAPPER_NEWSLETTER[
+      body.template as keyof typeof TEMPLATE_MAPPER_NEWSLETTER
+    ];
 
     const membersNewsletter = await fetchMembersNewsletter();
     const membersExcluded = body.excludeMembersEventId
@@ -177,7 +181,9 @@ const handlerPost = async (request: Request) => {
 
     for (const entry of entries) {
       const email = await template.template({
-        unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${entry?.key[1]}`,
+        unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${
+          entry?.key[1]
+        }`,
       });
       const { error } = await resend.emails.send({
         from: "NN1 Dev Club <club@nn1.dev>",
@@ -190,10 +196,9 @@ const handlerPost = async (request: Request) => {
       (error ? sentError : sentSuccess).push(entry.value.email);
     }
   } else {
-    const template =
-      TEMPLATE_MAPPER_EVENT[
-        body.template as keyof typeof TEMPLATE_MAPPER_EVENT
-      ];
+    const template = TEMPLATE_MAPPER_EVENT[
+      body.template as keyof typeof TEMPLATE_MAPPER_EVENT
+    ];
 
     const entries = await fetchMembersEvent(body.eventId);
 
