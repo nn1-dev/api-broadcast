@@ -218,6 +218,9 @@ const handlerPost = async (request: Request) => {
         subject: template.subject,
         html: email.html,
         text: email.text,
+        headers: {
+          "List-Unsubscribe": "<mailto:club@nn1.dev?subject=Unsubscribe>",
+        },
       });
 
       (error ? sentError : sentSuccess).push(entry.value.email);
