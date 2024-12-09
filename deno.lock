@@ -3,6 +3,7 @@
   "specifiers": {
     "npm:@react-email/body@*": "0.0.10_react@18.3.1",
     "npm:@react-email/button@*": "0.0.18_react@18.3.1",
+    "npm:@react-email/column@*": "0.0.13_react@18.3.1",
     "npm:@react-email/container@*": "0.0.14_react@18.3.1",
     "npm:@react-email/head@*": "0.0.11_react@18.3.1",
     "npm:@react-email/heading@*": "0.0.14_react@18.3.1",
@@ -11,6 +12,7 @@
     "npm:@react-email/img@*": "0.0.10_react@18.3.1",
     "npm:@react-email/link@*": "0.0.11_react@18.3.1",
     "npm:@react-email/render@*": "1.0.2_react@18.3.1_react-dom@18.3.1__react@18.3.1",
+    "npm:@react-email/row@*": "0.0.12_react@18.3.1",
     "npm:@react-email/text@*": "0.0.10_react@18.3.1",
     "npm:react@*": "18.3.1",
     "npm:resend@*": "4.0.1_react@18.3.1"
@@ -41,6 +43,12 @@
     },
     "@react-email/button@0.0.18_react@18.3.1": {
       "integrity": "sha512-uNUnpeDzz1o9HAky47JSTsUN/Ih0A3Az165AAOgAy8XOVzQJPrltUBRzHkScSVJTwRqKLASkie1yZbtNGIcRdA==",
+      "dependencies": [
+        "react"
+      ]
+    },
+    "@react-email/column@0.0.13_react@18.3.1": {
+      "integrity": "sha512-Lqq17l7ShzJG/d3b1w/+lVO+gp2FM05ZUo/nW0rjxB8xBICXOVv6PqjDnn3FXKssvhO5qAV20lHM6S+spRhEwQ==",
       "dependencies": [
         "react"
       ]
@@ -105,6 +113,12 @@
         "react",
         "react-dom",
         "react-promise-suspense"
+      ]
+    },
+    "@react-email/row@0.0.12_react@18.3.1": {
+      "integrity": "sha512-HkCdnEjvK3o+n0y0tZKXYhIXUNPDx+2vq1dJTmqappVHXS5tXS6W5JOPZr5j+eoZ8gY3PShI2LWj5rWF7ZEtIQ==",
+      "dependencies": [
+        "react"
       ]
     },
     "@react-email/text@0.0.10_react@18.3.1": {
@@ -467,10 +481,18 @@
     "https://esm.sh/react@18.3.1/jsx-runtime": "f47f11639cc0531ad2f1e0f6334d9ae7a8d906c905d9b79cb2e8cd4331bc5b10",
     "https://esm.sh/stable/react@18.3.1/denonext/jsx-runtime.js": "5ff1e02a3bb5c69dd3535d77054b182f1ea51c5eeaf24a396984f6b7012c2716",
     "https://esm.sh/stable/react@18.3.1/denonext/react.mjs": "fc048ffc55366baf7669519127d186761db72046e2bebf35fe8d0de3964defa3",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Button.tsx": "0f04d2417e0fa0227fc9385cb19d2d5bd22101df6e9d8e52340717fdcbec3104",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Heading.tsx": "8f0aef6cc3f894d4380f0bbc4766a6e10e47b936a47ad8f189ecc75ebe826bd1",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Hr.tsx": "4828c67a06553b50ef2425ee84e5b74ec7972d2a0d14b4d676795fab8eaaf155",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Layout.tsx": "18e81eb12f599c2672f4119bc73f00e93d214673aaa19a4bfcfb790c2c449aa1",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Link.tsx": "171907ef1266d39b3a109f85d2fdbf824203938101189f4160b96ddecc32f3fc",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "2dd061ac6059009efd37ac3ab12076315cd248208324f7336526ed486678285c",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-19.tsx": "a6aa5867232dc9c501ab185d85c68480c35523dd9ec0736adab9ad182ef55481",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-25.tsx": "cbcfde2e7591b8edd34cceb38c9138c8001689e95b0613400a8a7ea5d95ff52f",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-27.tsx": "19fc7146010f31703f64d1fff4162ceec37e5b7f29d5f1270e99d48106bac318",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-4-2024-11-27.tsx": "247f113d382d6db1d886f14ab9ed7fe89687de6ea9b189165cb506ab9bc68487",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx": "f64be5f3fca3afb6b334e58c1d8ff92ddd2adb56ab02f423bb8c463ffff81bfb",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-07-24.tsx": "7fe5094587180079687b3904c95546f429c73374a35838bb01b5bf3d5fc0d7df",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx": "5d516e409af4e1c1ce04541d8e23282fa33f42acd3f00c84c1290a15e5b6d3c6",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-09-24.tsx": "056fb9b543da70ac848c3096a42cbac64bbebcbd498b742f06005a4ba4d6c3d4",
@@ -478,12 +500,14 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-10-22.tsx": "0dba93ce3c9ab8a92f5d5a06532940b0dfaeb33457df695326352ced85f68c2f",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-11-14.tsx": "09ca4bdb8a79770b2e48cd746d3217ed144fa86744f0c901d236b5d9df1c4994",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-11-26.tsx": "09bcdf492081c9df39f6abf8ad0d6e7da18043db9b9779aad20ea24fcd5033e8",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-10.tsx": "1b688b21c2b0c2a771ea8bc23ca737372da1c7a55bc93c61d4f1d2394cf94619",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/style.tsx": "910de2f255087277b4a3eb2cba51cc30f1f9022c470c7b7ca8a9c64b15e81f94"
   },
   "workspace": {
     "dependencies": [
       "npm:@react-email/body@*",
       "npm:@react-email/button@*",
+      "npm:@react-email/column@*",
       "npm:@react-email/container@*",
       "npm:@react-email/head@*",
       "npm:@react-email/heading@*",
@@ -492,6 +516,7 @@
       "npm:@react-email/img@*",
       "npm:@react-email/link@*",
       "npm:@react-email/render@*",
+      "npm:@react-email/row@*",
       "npm:@react-email/text@*",
       "npm:react@*"
     ]

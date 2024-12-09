@@ -11,7 +11,9 @@
     "@react-email/img": "npm:@react-email/img",
     "@react-email/link": "npm:@react-email/link",
     "@react-email/render": "npm:@react-email/render",
-    "@react-email/text": "npm:@react-email/text"
+    "@react-email/text": "npm:@react-email/text",
+    "@react-email/row": "npm:@react-email/row",
+    "@react-email/column": "npm:@react-email/column"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

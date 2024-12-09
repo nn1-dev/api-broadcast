@@ -1,15 +1,6 @@
 import { Resend } from "npm:resend";
-import { renderEmail_2024_07_24 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-07-24.tsx";
-import { renderEmail_2024_08_27 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-08-27.tsx";
-import { renderEmail_2024_09_19 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-19.tsx";
-import { renderEmail_2024_09_24 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-09-24.tsx";
-import { renderEmail_2024_09_25 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-25.tsx";
-import { renderEmail_2024_09_27 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-3-2024-09-27.tsx";
-import { renderEmail_2024_11_27 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-4-2024-11-27.tsx";
-import { renderEmail_2024_10_15 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-10-15.tsx";
-import { renderEmail as renderEmail_2024_10_22 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-10-22.tsx";
-import { renderEmail as renderEmail_2024_11_14 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-11-14.tsx";
-import { renderEmail as renderEmail_2024_11_26 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-11-26.tsx";
+import { renderEmailEvent_5_2025_01_01 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx";
+import { renderEmailNewsletter_2024_12_10 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-10.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
@@ -23,33 +14,10 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
     subject: string;
   }
 > = {
-  "2024-07-24": {
-    template: renderEmail_2024_07_24,
-    subject: "NN1 Dev Club #3",
-  },
-  "2024-08-27": {
-    template: renderEmail_2024_08_27,
-    subject: "Co-working days & NN1 Dev Club #3",
-  },
-  "2024-09-24": {
-    template: renderEmail_2024_09_24,
-    subject: "NN1 Dev Club #3 - Last Chance to Get Your Ticket",
-  },
-  "2024-10-15": {
-    template: renderEmail_2024_10_15,
-    subject: "NN1 Dev Club #4",
-  },
-  "2024-10-22": {
-    template: renderEmail_2024_10_22,
-    subject: "Co-working day, Friday, 25/10/2024",
-  },
-  "2024-11-14": {
-    template: renderEmail_2024_11_14,
-    subject: "Last meet-up of 2024, January event, Discord server and more…",
-  },
-  "2024-11-26": {
-    template: renderEmail_2024_11_26,
-    subject: "Two days to go!",
+  "2024-12-10": {
+    template: renderEmailNewsletter_2024_12_10,
+    subject:
+      "NN1 Dev Club #5: Hack & Share - a rundown of side projects by Northamptonshire geeks",
   },
 };
 
@@ -63,21 +31,9 @@ const TEMPLATE_MAPPER_EVENT: Record<
     subject: string;
   }
 > = {
-  "2024-09-19": {
-    template: renderEmail_2024_09_19,
-    subject: "NN1 Dev Club #3 - We will see you in a week",
-  },
-  "2024-09-25": {
-    template: renderEmail_2024_09_25,
-    subject: "NN1 Dev Club #3 - See you tomorrow 👋",
-  },
-  "2024-09-27": {
-    template: renderEmail_2024_09_27,
-    subject: "Your feedback matters",
-  },
-  "2024-11-27": {
-    template: renderEmail_2024_11_27,
-    subject: "NN1 Dev Club #4 - See you tomorrow 👋",
+  "5-2025-01-01": {
+    template: renderEmailEvent_5_2025_01_01,
+    subject: "NN1 Dev Club #5 - See you soon 👋",
   },
 };
 
