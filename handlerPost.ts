@@ -1,6 +1,6 @@
 import { Resend } from "npm:resend";
 import { renderEmailEvent_5_2025_01_01 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx";
-import { renderEmailNewsletter_2024_12_10 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-10.tsx";
+import { renderEmailNewsletter_2024_12_09 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-09.tsx";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
 
@@ -14,8 +14,8 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
     subject: string;
   }
 > = {
-  "2024-12-10": {
-    template: renderEmailNewsletter_2024_12_10,
+  "2024-12-09": {
+    template: renderEmailNewsletter_2024_12_09,
     subject:
       "NN1 Dev Club #5: Hack & Share - a rundown of side projects by Northamptonshire geeks",
   },
