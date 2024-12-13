@@ -177,8 +177,20 @@ const handlerPost = async (request: Request) => {
 
     const payloadsChunked = chunkArray(payloads, RESEND_MAX_BATCH_CHUNK);
 
-    for (const chunk of payloadsChunked) {
-      await resend.batch.send(chunk);
+    try {
+      for (const chunk of payloadsChunked) {
+        await resend.batch.send(chunk);
+      }
+    } catch {
+      return Response.json(
+        {
+          status: "error",
+          statusCode: 500,
+          data: null,
+          error: "Failed to schedule an email.",
+        },
+        { status: 500 },
+      );
     }
 
     data.push(...entries.map((item) => item.value.email));
@@ -201,8 +213,20 @@ const handlerPost = async (request: Request) => {
 
     const payloadsChunked = chunkArray(payloads, RESEND_MAX_BATCH_CHUNK);
 
-    for (const chunk of payloadsChunked) {
-      await resend.batch.send(chunk);
+    try {
+      for (const chunk of payloadsChunked) {
+        await resend.batch.send(chunk);
+      }
+    } catch {
+      return Response.json(
+        {
+          status: "error",
+          statusCode: 500,
+          data: null,
+          error: "Failed to schedule an email.",
+        },
+        { status: 500 },
+      );
     }
 
     data.push(...entries.map((item) => item.value.email));
