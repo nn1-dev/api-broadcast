@@ -22,5 +22,6 @@
   "tasks": {
     "dev": "deno run --watch --allow-env --allow-net --allow-read --env --reload index.ts",
     "start": "deno run --allow-env --allow-net --allow-read --env index.ts"
+    "test": "deno test"
   }
 }

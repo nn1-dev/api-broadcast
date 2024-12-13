@@ -1,8 +1,11 @@
 import { Resend } from "npm:resend";
 import { renderEmailEvent_5_2025_01_01 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx";
 import { renderEmailNewsletter_2024_12_09 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-09.tsx";
+import { chunkArray } from "./utils.ts";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
+// https://resend.com/docs/api-reference/emails/send-batch-emails
+const RESEND_MAX_BATCH_CHUNK = 100;
 
 const TEMPLATE_MAPPER_NEWSLETTER: Record<
   string,
@@ -56,6 +59,7 @@ const fetchMembersEvent = async (eventId: number) => {
       versionstamp: string;
     }[];
   } = await response.json();
+
   return responseJson.data.filter((member) => member.value.confirmed);
 };
 
@@ -75,6 +79,7 @@ const fetchMembersNewsletter = async () => {
       versionstamp: string;
     }[];
   } = await response.json();
+
   return responseJson.data;
 };
 
@@ -93,6 +98,25 @@ type BodyEvent = {
 const isBroadcastAudienceNewsletter = (
   body: BodyNewsletter | BodyEvent,
 ): body is BodyNewsletter => body.audience === "newsletter";
+
+async function createEmailPayload(
+  to: string,
+  subject: string,
+  templatePromise: () => Promise<{
+    html: string;
+    text: string;
+  }>,
+) {
+  const { html, text } = await templatePromise();
+
+  return {
+    from: "NN1 Dev Club <club@nn1.dev>",
+    to,
+    subject,
+    html,
+    text,
+  };
+}
 
 const handlerPost = async (request: Request) => {
   const body: BodyNewsletter | BodyEvent = await request.json();
@@ -116,8 +140,7 @@ const handlerPost = async (request: Request) => {
     );
   }
 
-  const sentSuccess: string[] = [];
-  const sentError: string[] = [];
+  const data: string[] = [];
 
   if (shouldBroadcastNewsletter) {
     const template = TEMPLATE_MAPPER_NEWSLETTER[
@@ -137,25 +160,28 @@ const handlerPost = async (request: Request) => {
         ),
     );
 
-    console.log({ entriesLength: entries.length });
-    console.log({ entries: entries.map((entry) => entry.value.email) });
+    const payloads = await Promise.all(
+      entries.map((entry) =>
+        createEmailPayload(
+          entry.value.email,
+          template.subject,
+          () =>
+            template.template({
+              unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${
+                entry?.key[1]
+              }`,
+            }),
+        )
+      ),
+    );
 
-    for (const entry of entries) {
-      const email = await template.template({
-        unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${
-          entry?.key[1]
-        }`,
-      });
-      const { error } = await resend.emails.send({
-        from: "NN1 Dev Club <club@nn1.dev>",
-        to: entry.value.email,
-        subject: template.subject,
-        html: email.html,
-        text: email.text,
-      });
+    const payloadsChunked = chunkArray(payloads, RESEND_MAX_BATCH_CHUNK);
 
-      (error ? sentError : sentSuccess).push(entry.value.email);
+    for (const chunk of payloadsChunked) {
+      await resend.batch.send(chunk);
     }
+
+    data.push(...entries.map((item) => item.value.email));
   } else {
     const template = TEMPLATE_MAPPER_EVENT[
       body.template as keyof typeof TEMPLATE_MAPPER_EVENT
@@ -163,34 +189,30 @@ const handlerPost = async (request: Request) => {
 
     const entries = await fetchMembersEvent(body.eventId);
 
-    console.log({ entriesLength: entries.length });
-    console.log({ entries: entries.map((entry) => entry.value.email) });
+    const payloads = await Promise.all(
+      entries.map((entry) =>
+        createEmailPayload(
+          entry.value.email,
+          template.subject,
+          () => template.template(),
+        )
+      ),
+    );
 
-    for (const entry of entries) {
-      const email = await template.template();
-      const { error } = await resend.emails.send({
-        from: "NN1 Dev Club <club@nn1.dev>",
-        to: entry.value.email,
-        subject: template.subject,
-        html: email.html,
-        text: email.text,
-        headers: {
-          "List-Unsubscribe": "<mailto:club@nn1.dev?subject=Unsubscribe>",
-        },
-      });
+    const payloadsChunked = chunkArray(payloads, RESEND_MAX_BATCH_CHUNK);
 
-      (error ? sentError : sentSuccess).push(entry.value.email);
+    for (const chunk of payloadsChunked) {
+      await resend.batch.send(chunk);
     }
+
+    data.push(...entries.map((item) => item.value.email));
   }
 
   return Response.json(
     {
       status: "success",
       statusCode: 200,
-      data: {
-        sentSuccess,
-        sentError,
-      },
+      data,
       error: null,
     },
     { status: 200 },
