@@ -1,4 +1,5 @@
 import { Resend } from "npm:resend";
+import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
 import { renderEmailEvent_5_2025_01_01 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx";
 import { renderEmailNewsletter_2024_12_09 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-09.tsx";
 import { chunkArray } from "./utils.ts";
@@ -41,46 +42,56 @@ const TEMPLATE_MAPPER_EVENT: Record<
 };
 
 const fetchMembersEvent = async (eventId: number) => {
-  const response = await fetch(`https://tickets.nn1.dev/${eventId}`, {
-    headers: {
-      Authorization: `Bearer ${Deno.env.get("API_KEY_TICKETS")}`,
-    },
-  });
-  const responseJson: {
-    data: {
-      key: ["nn1-dev-tickets", number, string];
-      value: {
-        timestamp: string;
-        eventId: number;
-        name: string;
-        email: string;
-        confirmed: boolean;
-      };
-      versionstamp: string;
-    }[];
-  } = await response.json();
+  try {
+    const response = await fetch(`https://tickets.nn1.dev/${eventId}`, {
+      headers: {
+        Authorization: `Bearer ${Deno.env.get("API_KEY_TICKETS")}`,
+      },
+    });
+    const responseJson: {
+      data: {
+        key: ["nn1-dev-tickets", number, string];
+        value: {
+          timestamp: string;
+          eventId: number;
+          name: string;
+          email: string;
+          confirmed: boolean;
+        };
+        versionstamp: string;
+      }[];
+    } = await response.json();
 
-  return responseJson.data.filter((member) => member.value.confirmed);
+    return responseJson.data.filter((member) => member.value.confirmed);
+  } catch {
+    Sentry.captureException(new Error("Failed to fetch event members."));
+    return [];
+  }
 };
 
 const fetchMembersNewsletter = async () => {
-  const response = await fetch(`https://newsletter.nn1.dev`, {
-    headers: {
-      Authorization: `Bearer ${Deno.env.get("API_KEY_NEWSLETTER")}`,
-    },
-  });
-  const responseJson: {
-    data: {
-      key: ["nn1-dev-newsletter", string];
-      value: {
-        timestamp: string;
-        email: string;
-      };
-      versionstamp: string;
-    }[];
-  } = await response.json();
+  try {
+    const response = await fetch(`https://newsletter.nn1.dev`, {
+      headers: {
+        Authorization: `Bearer ${Deno.env.get("API_KEY_NEWSLETTER")}`,
+      },
+    });
+    const responseJson: {
+      data: {
+        key: ["nn1-dev-newsletter", string];
+        value: {
+          timestamp: string;
+          email: string;
+        };
+        versionstamp: string;
+      }[];
+    } = await response.json();
 
-  return responseJson.data;
+    return responseJson.data;
+  } catch {
+    Sentry.captureException(new Error("Failed to fetch newsletter members."));
+    return [];
+  }
 };
 
 type BodyNewsletter = {
@@ -100,12 +111,14 @@ const isBroadcastAudienceNewsletter = (
 ): body is BodyNewsletter => body.audience === "newsletter";
 
 async function createEmailPayload(
-  to: string,
-  subject: string,
-  templatePromise: () => Promise<{
-    html: string;
-    text: string;
-  }>,
+  { to, subject, templatePromise }: {
+    to: string;
+    subject: string;
+    templatePromise: () => Promise<{
+      html: string;
+      text: string;
+    }>;
+  },
 ) {
   const { html, text } = await templatePromise();
 
@@ -163,14 +176,16 @@ const handlerPost = async (request: Request) => {
     const payloads = await Promise.all(
       entries.map((entry) =>
         createEmailPayload(
-          entry.value.email,
-          template.subject,
-          () =>
-            template.template({
-              unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${
-                entry?.key[1]
-              }`,
-            }),
+          {
+            to: entry.value.email,
+            subject: template.subject,
+            templatePromise: () =>
+              template.template({
+                unsubscribeUrl: `https://nn1.dev/newsletter/unsubscribe/${
+                  entry?.key[1]
+                }`,
+              }),
+          },
         )
       ),
     );
@@ -204,9 +219,11 @@ const handlerPost = async (request: Request) => {
     const payloads = await Promise.all(
       entries.map((entry) =>
         createEmailPayload(
-          entry.value.email,
-          template.subject,
-          () => template.template(),
+          {
+            to: entry.value.email,
+            subject: template.subject,
+            templatePromise: () => template.template(),
+          },
         )
       ),
     );
