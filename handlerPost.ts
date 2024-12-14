@@ -197,6 +197,7 @@ const handlerPost = async (request: Request) => {
         await resend.batch.send(chunk);
       }
     } catch {
+      Sentry.captureException(new Error("Emails scheduling failed."));
       return Response.json(
         {
           status: "error",
@@ -235,6 +236,7 @@ const handlerPost = async (request: Request) => {
         await resend.batch.send(chunk);
       }
     } catch {
+      Sentry.captureException(new Error("Emails scheduling failed."));
       return Response.json(
         {
           status: "error",
