@@ -1,7 +1,7 @@
 import { Resend } from "npm:resend";
 import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
 import { renderEmailEvent_5_2025_01_01 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx";
-import { renderEmailNewsletter_2024_12_09 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-09.tsx";
+import { renderEmailNewsletter_2025_01_16 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx";
 import { chunkArray } from "./utils.ts";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
@@ -18,8 +18,8 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
     subject: string;
   }
 > = {
-  "2024-12-09": {
-    template: renderEmailNewsletter_2024_12_09,
+  "2025-01-16": {
+    template: renderEmailNewsletter_2025_01_16,
     subject:
       "NN1 Dev Club #5: Hack & Share - a rundown of side projects by Northamptonshire geeks",
   },

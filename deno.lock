@@ -1,8 +1,6 @@
 {
   "version": "4",
   "specifiers": {
-    "jsr:@std/assert@*": "1.0.9",
-    "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:@react-email/body@*": "0.0.11_react@19.0.0",
     "npm:@react-email/button@*": "0.0.19_react@19.0.0",
     "npm:@react-email/column@*": "0.0.13_react@19.0.0",
@@ -12,22 +10,11 @@
     "npm:@react-email/html@*": "0.0.11_react@19.0.0",
     "npm:@react-email/img@*": "0.0.11_react@19.0.0",
     "npm:@react-email/link@*": "0.0.12_react@19.0.0",
-    "npm:@react-email/render@*": "1.0.3_react@19.0.0_react-dom@19.0.0__react@19.0.0",
+    "npm:@react-email/render@*": "1.0.4_react@19.0.0_react-dom@19.0.0__react@19.0.0",
     "npm:@react-email/row@*": "0.0.12_react@19.0.0",
     "npm:@react-email/text@*": "0.0.11_react@19.0.0",
     "npm:react@*": "19.0.0",
-    "npm:resend@*": "4.0.1_react@19.0.0"
-  },
-  "jsr": {
-    "@std/assert@1.0.9": {
-      "integrity": "a9f0c611a869cc791b26f523eec54c7e187aab7932c2c8e8bea0622d13680dcd",
-      "dependencies": [
-        "jsr:@std/internal"
-      ]
-    },
-    "@std/internal@1.0.5": {
-      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
-    }
+    "npm:resend@*": "4.1.1_react@19.0.0"
   },
   "npm": {
     "@isaacs/cliui@8.0.2": {
@@ -111,8 +98,8 @@
         "react-promise-suspense"
       ]
     },
-    "@react-email/render@1.0.3_react@19.0.0_react-dom@19.0.0__react@19.0.0": {
-      "integrity": "sha512-VQ8g4SuIq/jWdfBTdTjb7B8Np0jj+OoD7VebfdHhLTZzVQKesR2aigpYqE/ZXmwj4juVxDm8T2b6WIIu48rPCg==",
+    "@react-email/render@1.0.4_react@19.0.0_react-dom@19.0.0__react@19.0.0": {
+      "integrity": "sha512-8ZXi89d8igBDE6W3zlHBa3GEDWKEUFDAa7i8MvVxnRViQuvsRbibK3ltuPgixxRI5+HgGNCSreBHQKZCkhUdyw==",
       "dependencies": [
         "html-to-text",
         "prettier",
@@ -214,8 +201,8 @@
         "domelementtype"
       ]
     },
-    "domutils@3.1.0": {
-      "integrity": "sha512-H78uMmQtI2AhgDJjWeQmHwJJ2bLPD3GMmO7Zja/ZZh84wkm+4ut+IUnUdRa8uCGX88DiVx1j6FRe1XfxEgjEZA==",
+    "domutils@3.2.2": {
+      "integrity": "sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw==",
       "dependencies": [
         "dom-serializer",
         "domelementtype",
@@ -362,8 +349,8 @@
     "peberminta@0.9.0": {
       "integrity": "sha512-XIxfHpEuSJbITd1H3EeQwpcZbTLHc+VVr8ANI9t5sit565tsI4/xK3KWTUFE2e6QiangUkh3B0jihzmGnNrRsQ=="
     },
-    "prettier@3.3.3": {
-      "integrity": "sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew=="
+    "prettier@3.4.2": {
+      "integrity": "sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ=="
     },
     "proto-list@1.2.4": {
       "integrity": "sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA=="
@@ -384,8 +371,8 @@
     "react@19.0.0": {
       "integrity": "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="
     },
-    "resend@4.0.1_react@19.0.0": {
-      "integrity": "sha512-EkCRfzKw9JX7N75L+0BC8oXohDBLhlhl4w7AgrkEW2TAsOMBsVcbQHPe8cRWP6Ea7KDhD158TsNjbCBcohed5A==",
+    "resend@4.1.1_react@19.0.0": {
+      "integrity": "sha512-nkcRpIOgPb3sFPA/GyOTr6Vmlrkhwsu+XlC20kKbbebOfw0WbAjbBbJ1m4AcjKOkPf57O4DH9Bnbxi9i18JYng==",
       "dependencies": [
         "@react-email/render@1.0.1_react@19.0.0_react-dom@19.0.0__react@19.0.0"
       ]
@@ -466,13 +453,13 @@
     }
   },
   "redirects": {
-    "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime",
-    "https://esm.sh/v135/@types/react@latest/jsx-runtime~.d.ts": "https://esm.sh/v135/@types/react@19.0.1/jsx-runtime~.d.ts"
+    "https://esm.sh/@types/react@~19.0.7/jsx-runtime.d.ts": "https://esm.sh/@types/react@19.0.7/jsx-runtime.d.ts",
+    "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime"
   },
   "remote": {
     "https://deno.land/x/sentry@8.27.0/index.mjs": "8306208669d93169c864590efb2c291154f1beb9030c52f5114ca1f8ce3eca75",
-    "https://esm.sh/react@19.0.0/jsx-runtime": "4308af8bb96c62e2b532766af2e9ce1bfcd5a92f1dabc95622e6a3d57ca7d403",
-    "https://esm.sh/stable/react@19.0.0/denonext/jsx-runtime.js": "b60fc6a59897795785e5a27d4669610ff8dc30edf47f503751a12c8b71599e01",
+    "https://esm.sh/react@19.0.0/denonext/jsx-runtime.mjs": "643b749fa9666fbf73619a99fd708722edb4acaa34c8cea7be783a3432367780",
+    "https://esm.sh/react@19.0.0/jsx-runtime": "491d2a6b0632208ebc307680e900d5c3246bf6738f3b1ef028a72c94e8b53a62",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Button.tsx": "0f04d2417e0fa0227fc9385cb19d2d5bd22101df6e9d8e52340717fdcbec3104",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Heading.tsx": "8f0aef6cc3f894d4380f0bbc4766a6e10e47b936a47ad8f189ecc75ebe826bd1",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Hr.tsx": "4828c67a06553b50ef2425ee84e5b74ec7972d2a0d14b4d676795fab8eaaf155",
@@ -481,7 +468,7 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "2dd061ac6059009efd37ac3ab12076315cd248208324f7336526ed486678285c",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx": "f64be5f3fca3afb6b334e58c1d8ff92ddd2adb56ab02f423bb8c463ffff81bfb",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2024-12-09.tsx": "4b63929cdf533a656a7ee26ec951143eb7b49ea13d42195836bbe867acdb7256"
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx": "7dbe60e05597e402fd970e8453a7ce4e4ce18d2edb94694d41a83a612902311c"
   },
   "workspace": {
     "dependencies": [
