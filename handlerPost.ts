@@ -1,6 +1,6 @@
 import { Resend } from "npm:resend";
 import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
-import { renderEmailEvent_5_2025_01_01 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-01.tsx";
+import { renderEmailEvent_5_2025_01_29 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-29.tsx";
 import { renderEmailNewsletter_2025_01_16 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx";
 import { chunkArray } from "./utils.ts";
 
@@ -28,16 +28,16 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
 const TEMPLATE_MAPPER_EVENT: Record<
   string,
   {
-    template: () => Promise<{
+    template: (props: { ticketUrl: string }) => Promise<{
       html: string;
       text: string;
     }>;
     subject: string;
   }
 > = {
-  "5-2025-01-01": {
-    template: renderEmailEvent_5_2025_01_01,
-    subject: "NN1 Dev Club #5 - See you soon 👋",
+  "5-2025-01-29": {
+    template: renderEmailEvent_5_2025_01_29,
+    subject: "NN1 Dev Club #5 - See you tomorrow 👋",
   },
 };
 
@@ -223,7 +223,12 @@ const handlerPost = async (request: Request) => {
           {
             to: entry.value.email,
             subject: template.subject,
-            templatePromise: () => template.template(),
+            templatePromise: () =>
+              template.template({
+                ticketUrl: `https://nn1.dev/events/${entry.key[1]}/${
+                  entry.key[2]
+                }`,
+              }),
           },
         )
       ),
