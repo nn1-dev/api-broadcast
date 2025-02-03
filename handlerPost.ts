@@ -2,6 +2,7 @@ import { Resend } from "npm:resend";
 import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
 import { renderEmailEvent_5_2025_01_29 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-29.tsx";
 import { renderEmailNewsletter_2025_01_16 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx";
+import { renderEmailNewsletter_2025_02_03 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-02-03.tsx";
 import { chunkArray } from "./utils.ts";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
@@ -22,6 +23,11 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
     template: renderEmailNewsletter_2025_01_16,
     subject:
       "NN1 Dev Club #5: Hack & Share - a rundown of side projects by Northamptonshire geeks",
+  },
+  "2025-02-03": {
+    template: renderEmailNewsletter_2025_02_03,
+    subject:
+      'NN1 Dev Club #6: "Move Fast and Build Things: A Non-Technical Guide to AI Agents" by Eric Bye and "Dark Side of the Moon" by Rehan Butt',
   },
 };
 

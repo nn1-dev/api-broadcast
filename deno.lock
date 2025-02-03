@@ -386,8 +386,8 @@
         "parseley"
       ]
     },
-    "semver@7.6.3": {
-      "integrity": "sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A=="
+    "semver@7.7.0": {
+      "integrity": "sha512-DrfFnPzblFmNrIZzg5RzHegbiRWg7KMR7btwi2yjHwx06zsUbO5g613sVwEV7FTwmzJu+Io0lJe2GJ3LxqpvBQ=="
     },
     "shebang-command@2.0.0": {
       "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==",
@@ -465,10 +465,11 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Hr.tsx": "4828c67a06553b50ef2425ee84e5b74ec7972d2a0d14b4d676795fab8eaaf155",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Layout.tsx": "18e81eb12f599c2672f4119bc73f00e93d214673aaa19a4bfcfb790c2c449aa1",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Link.tsx": "171907ef1266d39b3a109f85d2fdbf824203938101189f4160b96ddecc32f3fc",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "2dd061ac6059009efd37ac3ab12076315cd248208324f7336526ed486678285c",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "71c9c6fed78c26810fae29d5f4d174c8c587f8eabce8197daa0232ca25e8a721",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-29.tsx": "08a3a8025c343b64a37a5872a815110c68f1e8c6517124da9fceb1dfd5a5d0d9",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx": "7dbe60e05597e402fd970e8453a7ce4e4ce18d2edb94694d41a83a612902311c"
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx": "7dbe60e05597e402fd970e8453a7ce4e4ce18d2edb94694d41a83a612902311c",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-02-03.tsx": "b85cfd3ddd03bf08eb8a1a7943cf4890ff67fba5f181df120f320e1e5744834f"
   },
   "workspace": {
     "dependencies": [
