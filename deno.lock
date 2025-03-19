@@ -477,7 +477,8 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-29.tsx": "08a3a8025c343b64a37a5872a815110c68f1e8c6517124da9fceb1dfd5a5d0d9",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx": "7dbe60e05597e402fd970e8453a7ce4e4ce18d2edb94694d41a83a612902311c",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-02-03.tsx": "b85cfd3ddd03bf08eb8a1a7943cf4890ff67fba5f181df120f320e1e5744834f",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-03-07.tsx": "2238b3731a780840d0c7bfd20b6dde8ff188a93fd32209aa7c6d9df81f805b84"
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-03-07.tsx": "2238b3731a780840d0c7bfd20b6dde8ff188a93fd32209aa7c6d9df81f805b84",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-03-20.tsx": "9b5efa340c68703b7f516b622da77feaae06d30bf1fe75b73eaa276338cd4863"
   },
   "workspace": {
     "dependencies": [

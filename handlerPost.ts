@@ -4,6 +4,7 @@ import { renderEmailEvent_5_2025_01_29 } from "https://raw.githubusercontent.com
 import { renderEmailNewsletter_2025_01_16 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx";
 import { renderEmailNewsletter_2025_02_03 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-02-03.tsx";
 import { renderEmailNewsletter_2025_03_07 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-03-07.tsx";
+import { renderEmailNewsletter_2025_03_20 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-03-20.tsx";
 import { chunkArray } from "./utils.ts";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
@@ -33,6 +34,10 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
   "2025-03-07": {
     template: renderEmailNewsletter_2025_03_07,
     subject: "✨ Introducing Spotlight",
+  },
+  "2025-03-20": {
+    template: renderEmailNewsletter_2025_03_20,
+    subject: "✨ NN1 Dev Club #6 is coming next week!",
   },
 };
 
