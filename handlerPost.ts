@@ -1,12 +1,13 @@
 import { Resend } from "npm:resend";
 import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
-import { renderEmailEvent_5_2025_01_29 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-29.tsx";
-import { renderEmailEvent_6_2025_03_26 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-6-2025-03-26.tsx";
+// import { renderEmailEvent_5_2025_01_29 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-5-2025-01-29.tsx";
+// import { renderEmailEvent_6_2025_03_26 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-6-2025-03-26.tsx";
 // import { renderEmailNewsletter_2025_01_16 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-01-16.tsx";
 // import { renderEmailNewsletter_2025_02_03 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-02-03.tsx";
 // import { renderEmailNewsletter_2025_03_07 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-03-07.tsx";
 // import { renderEmailNewsletter_2025_03_20 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-03-20.tsx";
-import { renderEmailNewsletter_2025_04_25 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-04-25.tsx";
+// import { renderEmailNewsletter_2025_04_25 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-04-25.tsx";
+import { renderEmailNewsletter_2025_05_15 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-05-15.tsx";
 import { chunkArray } from "./utils.ts";
 
 const resend = new Resend(Deno.env.get("API_KEY_RESEND"));
@@ -41,9 +42,13 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
   //   template: renderEmailNewsletter_2025_03_20,
   //   subject: "✨ NN1 Dev Club #6 is coming next week!",
   // },
-  "2025-04-25": {
-    template: renderEmailNewsletter_2025_04_25,
-    subject: "✨ NN1 Dev Club #7 & Open Collective",
+  // "2025-04-25": {
+  //   template: renderEmailNewsletter_2025_04_25,
+  //   subject: "✨ NN1 Dev Club #7 & Open Collective",
+  // },
+  "2025-05-15": {
+    template: renderEmailNewsletter_2025_05_15,
+    subject: "✨ NN1 Dev Club #7",
   },
 };
 
@@ -57,14 +62,14 @@ const TEMPLATE_MAPPER_EVENT: Record<
     subject: string;
   }
 > = {
-  "5-2025-01-29": {
-    template: renderEmailEvent_5_2025_01_29,
-    subject: "NN1 Dev Club #5 - See you tomorrow 👋",
-  },
-  "6-2025-03-26": {
-    template: renderEmailEvent_6_2025_03_26,
-    subject: "NN1 Dev Club #6 - See you tomorrow 👋",
-  },
+  // "5-2025-01-29": {
+  //   template: renderEmailEvent_5_2025_01_29,
+  //   subject: "NN1 Dev Club #5 - See you tomorrow 👋",
+  // },
+  // "6-2025-03-26": {
+  //   template: renderEmailEvent_6_2025_03_26,
+  //   subject: "NN1 Dev Club #6 - See you tomorrow 👋",
+  // },
 };
 
 const fetchMembersEvent = async (eventId: number) => {
