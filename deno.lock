@@ -220,6 +220,7 @@
     }
   },
   "redirects": {
+    "https://esm.sh/@types/react@~19.0.12/jsx-runtime.d.ts": "https://esm.sh/@types/react@19.0.14/jsx-runtime.d.ts",
     "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@19.1.0/jsx-runtime"
   },
   "remote": {
