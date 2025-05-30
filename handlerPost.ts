@@ -1,7 +1,8 @@
 import { Resend } from "npm:resend";
 import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
 
-import { renderEmailEvent_7_2025_05_28 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-28.tsx";
+// import { renderEmailEvent_7_2025_05_28 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-28.tsx";
+import { renderEmailEvent_7_2025_05_30 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-30.tsx";
 import { renderEmailNewsletter_2025_05_28 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-05-28.tsx";
 
 import { chunkArray } from "./utils.ts";
@@ -36,9 +37,9 @@ const TEMPLATE_MAPPER_EVENT: Record<
     subject: string;
   }
 > = {
-  "7-2025-05-28": {
-    template: renderEmailEvent_7_2025_05_28,
-    subject: "See You Tomorrow – NN1 Dev Club #7 👋",
+  "7-2025-05-30": {
+    template: renderEmailEvent_7_2025_05_30,
+    subject: "✨ Thank you for joining us yesterday",
   },
 };
 

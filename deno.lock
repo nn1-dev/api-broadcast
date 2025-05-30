@@ -220,7 +220,6 @@
     }
   },
   "redirects": {
-    "https://esm.sh/@types/react@~19.0.12/jsx-runtime.d.ts": "https://esm.sh/@types/react@19.0.14/jsx-runtime.d.ts",
     "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@19.1.0/jsx-runtime"
   },
   "remote": {
@@ -234,7 +233,7 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Link.tsx": "171907ef1266d39b3a109f85d2fdbf824203938101189f4160b96ddecc32f3fc",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "711b326c7c72bb6d9481fdb6df31f9b1a154b757e42f52af6b120b3d47ad4dbf",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-28.tsx": "06a6c3254a6e6e2766200cc5fa3cb1e04eb39a83097efb661e95d38a938669c1",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-30.tsx": "4ba4e9cc3d9ccff987ff702cf7986dfa9728902d3362d24a1d37787ef5616c53",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-05-28.tsx": "32d2639c2b742f89fd15484bb5c9ab2988f3c1df90356546f887d3d3deb6979d"
   },
   "workspace": {
