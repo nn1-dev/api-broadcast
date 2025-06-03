@@ -220,6 +220,7 @@
     }
   },
   "redirects": {
+    "https://esm.sh/@types/react@~19.0.12/jsx-runtime.d.ts": "https://esm.sh/@types/react@19.0.14/jsx-runtime.d.ts",
     "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@19.1.0/jsx-runtime"
   },
   "remote": {
@@ -227,14 +228,13 @@
     "https://esm.sh/react@19.1.0/denonext/jsx-runtime.mjs": "fbd3137c02ae8733d3bfaf434884aada41253c9074bdd3baf598879de24fe70b",
     "https://esm.sh/react@19.1.0/jsx-runtime": "8c80348342f0448fbf5499e9f357ab3f678db3b7fbf782f8899fc88bb0a182c3",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Button.tsx": "0f04d2417e0fa0227fc9385cb19d2d5bd22101df6e9d8e52340717fdcbec3104",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Heading.tsx": "8f0aef6cc3f894d4380f0bbc4766a6e10e47b936a47ad8f189ecc75ebe826bd1",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Hr.tsx": "4828c67a06553b50ef2425ee84e5b74ec7972d2a0d14b4d676795fab8eaaf155",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Layout.tsx": "18e81eb12f599c2672f4119bc73f00e93d214673aaa19a4bfcfb790c2c449aa1",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Link.tsx": "171907ef1266d39b3a109f85d2fdbf824203938101189f4160b96ddecc32f3fc",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "711b326c7c72bb6d9481fdb6df31f9b1a154b757e42f52af6b120b3d47ad4dbf",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-30.tsx": "4ba4e9cc3d9ccff987ff702cf7986dfa9728902d3362d24a1d37787ef5616c53",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-05-28.tsx": "32d2639c2b742f89fd15484bb5c9ab2988f3c1df90356546f887d3d3deb6979d"
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-06-03.tsx": "2f86a825e847639f0f824c5eab0183ba587d32350f60243816a39603b218d593"
   },
   "workspace": {
     "dependencies": [
