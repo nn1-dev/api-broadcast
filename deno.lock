@@ -11,11 +11,11 @@
     "npm:@react-email/html@*": "0.0.11_react@19.1.1",
     "npm:@react-email/img@*": "0.0.11_react@19.1.1",
     "npm:@react-email/link@*": "0.0.12_react@19.1.1",
-    "npm:@react-email/render@*": "1.2.1_react@19.1.1_react-dom@19.1.1__react@19.1.1",
+    "npm:@react-email/render@*": "1.2.3_react@19.1.1_react-dom@19.1.1__react@19.1.1",
     "npm:@react-email/row@*": "0.0.12_react@19.1.1",
     "npm:@react-email/text@*": "0.1.5_react@19.1.1",
     "npm:react@*": "19.1.1",
-    "npm:resend@*": "6.0.1_@react-email+render@1.2.1__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1"
+    "npm:resend@*": "6.1.0_@react-email+render@1.2.3__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1"
   },
   "npm": {
     "@react-email/body@0.1.0_react@19.1.1": {
@@ -78,8 +78,8 @@
         "react"
       ]
     },
-    "@react-email/render@1.2.1_react@19.1.1_react-dom@19.1.1__react@19.1.1": {
-      "integrity": "sha512-7M4Xi8ITESZKS7pOPE0HWhKJWtS/JrAqPIyFPqIPJXZJHkjFMYXn2b/tAsHOufYW5/LTk4U1IkBMaVwE06kykw==",
+    "@react-email/render@1.2.3_react@19.1.1_react-dom@19.1.1__react@19.1.1": {
+      "integrity": "sha512-qu3XYNkHGao3teJexVD5CrcgFkNLrzbZvpZN17a7EyQYUN3kHkTkE9saqY4VbvGx6QoNU3p8rsk/Xm++D/+pTw==",
       "dependencies": [
         "html-to-text",
         "prettier",
@@ -193,8 +193,8 @@
     "react@19.1.1": {
       "integrity": "sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ=="
     },
-    "resend@6.0.1_@react-email+render@1.2.1__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1": {
-      "integrity": "sha512-xNZ0gKAOqQcH83lXsqNOwBbpKROnsZpQr9mXRdG6hrHTF9G9Il2pkoTRtq7rJzXMvCZX+I79oahsbSeaYOWRFA==",
+    "resend@6.1.0_@react-email+render@1.2.3__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1": {
+      "integrity": "sha512-H0cJI2pcLk5/dGwyvZUHu+O7X/q6arvc40EWm+pRPuy+PSWojH5utZtmDBUZ2L0+gVwYZiWs6y2lw6GQA1z1rg==",
       "dependencies": [
         "@react-email/render"
       ],
@@ -213,6 +213,7 @@
     }
   },
   "redirects": {
+    "https://esm.sh/@types/react@~19.1.8/jsx-runtime.d.ts": "https://esm.sh/@types/react@19.1.13/jsx-runtime.d.ts",
     "https://esm.sh/react/jsx-runtime": "https://esm.sh/react@19.1.1/jsx-runtime"
   },
   "remote": {
@@ -225,7 +226,7 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Link.tsx": "171907ef1266d39b3a109f85d2fdbf824203938101189f4160b96ddecc32f3fc",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "711b326c7c72bb6d9481fdb6df31f9b1a154b757e42f52af6b120b3d47ad4dbf",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-08-27.tsx": "17d50765c609d19011832183cf28390fa86bdc299ee18b518837b9b664f5642e"
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-23.tsx": "43e39aca541bf0abec82649b3208a1575e112a1f0e7be7619f2ea95c62e60833"
   },
   "workspace": {
     "dependencies": [
