@@ -11,11 +11,11 @@
     "npm:@react-email/html@*": "0.0.11_react@19.1.1",
     "npm:@react-email/img@*": "0.0.11_react@19.1.1",
     "npm:@react-email/link@*": "0.0.12_react@19.1.1",
-    "npm:@react-email/render@*": "1.2.3_react@19.1.1_react-dom@19.1.1__react@19.1.1",
+    "npm:@react-email/render@*": "1.3.1_react@19.1.1_react-dom@19.1.1__react@19.1.1",
     "npm:@react-email/row@*": "0.0.12_react@19.1.1",
     "npm:@react-email/text@*": "0.1.5_react@19.1.1",
     "npm:react@*": "19.1.1",
-    "npm:resend@*": "6.1.0_@react-email+render@1.2.3__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1"
+    "npm:resend@*": "6.1.1_@react-email+render@1.3.1__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1"
   },
   "npm": {
     "@react-email/body@0.1.0_react@19.1.1": {
@@ -78,8 +78,8 @@
         "react"
       ]
     },
-    "@react-email/render@1.2.3_react@19.1.1_react-dom@19.1.1__react@19.1.1": {
-      "integrity": "sha512-qu3XYNkHGao3teJexVD5CrcgFkNLrzbZvpZN17a7EyQYUN3kHkTkE9saqY4VbvGx6QoNU3p8rsk/Xm++D/+pTw==",
+    "@react-email/render@1.3.1_react@19.1.1_react-dom@19.1.1__react@19.1.1": {
+      "integrity": "sha512-BOc/kanieEVyiuldFFvceriiBGBBVhe4JWWXCXE2ehLIqz+gSWD4rgCoXAGbJRnnVyyp4joPqK62bSfa88yonA==",
       "dependencies": [
         "html-to-text",
         "prettier",
@@ -193,8 +193,8 @@
     "react@19.1.1": {
       "integrity": "sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ=="
     },
-    "resend@6.1.0_@react-email+render@1.2.3__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1": {
-      "integrity": "sha512-H0cJI2pcLk5/dGwyvZUHu+O7X/q6arvc40EWm+pRPuy+PSWojH5utZtmDBUZ2L0+gVwYZiWs6y2lw6GQA1z1rg==",
+    "resend@6.1.1_@react-email+render@1.3.1__react@19.1.1__react-dom@19.1.1___react@19.1.1_react@19.1.1": {
+      "integrity": "sha512-qHip8WF4uB2k83vG5EfLWQo27anlHpQagljWLFSIXgbkmNYzoIoAsXctl/RZJl7tf+7uCLM/MEwPzyW5zwCJTA==",
       "dependencies": [
         "@react-email/render"
       ],
@@ -226,8 +226,7 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Link.tsx": "171907ef1266d39b3a109f85d2fdbf824203938101189f4160b96ddecc32f3fc",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "711b326c7c72bb6d9481fdb6df31f9b1a154b757e42f52af6b120b3d47ad4dbf",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-8-2025-09-24.tsx": "b764f0ea3c2d23ca6d889286274ef3727589986b6971a9da19f2b48c0a8e2de1",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-23.tsx": "43e39aca541bf0abec82649b3208a1575e112a1f0e7be7619f2ea95c62e60833"
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-30.tsx": "25c13f0217d9b38db1629bae207aeea20eb3353125d72d51c89946ad75c39ec2"
   },
   "workspace": {
     "dependencies": [
