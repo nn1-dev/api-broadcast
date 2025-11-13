@@ -8,7 +8,8 @@ import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
 // import { renderEmailNewsletter_2025_06_03 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-06-03.tsx";
 // import { renderEmailNewsletter_2025_08_27 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-08-27.tsx";
 // import { renderEmailNewsletter_2025_09_23 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-23.tsx";
-import { renderEmailNewsletter_2025_09_30 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-30.tsx";
+// import { renderEmailNewsletter_2025_09_30 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-30.tsx";
+import { renderEmailNewsletter_2025_11_13 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-11-13.tsx";
 
 import { chunkArray } from "./utils.ts";
 
@@ -26,8 +27,8 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
     subject: string;
   }
 > = {
-  "2025-09-30": {
-    template: renderEmailNewsletter_2025_09_30,
+  "2025-11-13": {
+    template: renderEmailNewsletter_2025_11_13,
     subject: "✨ NN1 Dev Club #9",
   },
 };
