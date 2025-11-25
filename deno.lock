@@ -1,6 +1,8 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@std/assert@*": "1.0.16",
+    "jsr:@std/internal@^1.0.12": "1.0.12",
     "npm:@react-email/body@*": "0.2.0_react@19.2.0",
     "npm:@react-email/button@*": "0.2.0_react@19.2.0",
     "npm:@react-email/column@*": "0.0.13_react@19.2.0",
@@ -15,7 +17,18 @@
     "npm:@react-email/row@*": "0.0.12_react@19.2.0",
     "npm:@react-email/text@*": "0.1.5_react@19.2.0",
     "npm:react@*": "19.2.0",
-    "npm:resend@*": "6.4.2_@react-email+render@2.0.0__react@19.2.0__react-dom@19.2.0___react@19.2.0_react@19.2.0"
+    "npm:resend@*": "6.5.2_@react-email+render@2.0.0__react@19.2.0__react-dom@19.2.0___react@19.2.0_react@19.2.0"
+  },
+  "jsr": {
+    "@std/assert@1.0.16": {
+      "integrity": "6a7272ed1eaa77defe76e5ff63ca705d9c495077e2d5fd0126d2b53fc5bd6532",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.12": {
+      "integrity": "972a634fd5bc34b242024402972cd5143eac68d8dffaca5eaa4dba30ce17b027"
+    }
   },
   "npm": {
     "@react-email/body@0.2.0_react@19.2.0": {
@@ -204,8 +217,8 @@
     "requires-port@1.0.0": {
       "integrity": "sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ=="
     },
-    "resend@6.4.2_@react-email+render@2.0.0__react@19.2.0__react-dom@19.2.0___react@19.2.0_react@19.2.0": {
-      "integrity": "sha512-YnxmwneltZtjc7Xff+8ZjG1/xPLdstCiqsedgO/JxWTf7vKRAPCx6CkhQ3ZXskG0mrmf8+I5wr/wNRd8PQMUfw==",
+    "resend@6.5.2_@react-email+render@2.0.0__react@19.2.0__react-dom@19.2.0___react@19.2.0_react@19.2.0": {
+      "integrity": "sha512-Yl83UvS8sYsjgmF8dVbNPzlfpmb3DkLUk3VwsAbkaEFo9UMswpNuPGryHBXGk+Ta4uYMv5HmjVk3j9jmNkcEDg==",
       "dependencies": [
         "@react-email/render",
         "svix"
@@ -263,10 +276,13 @@
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Link.tsx": "171907ef1266d39b3a109f85d2fdbf824203938101189f4160b96ddecc32f3fc",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Socials.tsx": "711b326c7c72bb6d9481fdb6df31f9b1a154b757e42f52af6b120b3d47ad4dbf",
     "https://raw.githubusercontent.com/nn1-dev/emails/main/components/Text.tsx": "a8658593cd39330d205526e1f69fbb3b175c4bc8089ac06783da90fb2029f33e",
-    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-11-13.tsx": "8c8229ec5f07918693f297eb97d6d94d34da9b9c846f80369a80a7f5f8418dda"
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-9-2025-11-26.tsx": "be63ff7215125021e72c7202a7da26bf5f5d28dc650a8880de4a6b45334d5c30",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/index.ts": "966c33ec8d347afbfa8cea53881b3ab9beb03e3091d58212b27735b65b1250fe",
+    "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-11-25.tsx": "161af31703c0d8d3ed1dd2ddc94c2bb2fd0e6420f939facf4d456955f4d11414"
   },
   "workspace": {
     "dependencies": [
+      "jsr:@std/assert@*",
       "npm:@react-email/body@*",
       "npm:@react-email/button@*",
       "npm:@react-email/column@*",
@@ -280,7 +296,8 @@
       "npm:@react-email/render@*",
       "npm:@react-email/row@*",
       "npm:@react-email/text@*",
-      "npm:react@*"
+      "npm:react@*",
+      "npm:resend@*"
     ]
   }
 }

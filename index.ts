@@ -1,4 +1,4 @@
-import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
+import * as Sentry from "sentry";
 import handlerPost from "./handlerPost.ts";
 
 Sentry.init({

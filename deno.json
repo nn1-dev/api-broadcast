@@ -13,7 +13,11 @@
     "@react-email/render": "npm:@react-email/render",
     "@react-email/text": "npm:@react-email/text",
     "@react-email/row": "npm:@react-email/row",
-    "@react-email/column": "npm:@react-email/column"
+    "@react-email/column": "npm:@react-email/column",
+    "resend" : "npm:resend",
+    "sentry" : "https://deno.land/x/sentry@8.27.0/index.mjs",
+    "assert" : "jsr:@std/assert",
+    "nn1Emails" : "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/index.ts",
   },
   "compilerOptions": {
     "jsx": "react-jsx",

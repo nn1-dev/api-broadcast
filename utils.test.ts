@@ -1,4 +1,4 @@
-import { assertEquals } from "jsr:@std/assert";
+import { assertEquals } from "assert";
 import { chunkArray } from "./utils.ts";
 
 Deno.test("splits array into equal chunks", () => {

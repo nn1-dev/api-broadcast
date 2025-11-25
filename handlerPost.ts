@@ -1,15 +1,10 @@
-import { Resend } from "npm:resend";
-import * as Sentry from "https://deno.land/x/sentry@8.27.0/index.mjs";
+import { Resend } from "resend";
+import * as Sentry from "sentry";
 
-// import { renderEmailEvent_7_2025_05_28 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-28.tsx";
-// import { renderEmailEvent_7_2025_05_30 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-7-2025-05-30.tsx";
-// import { renderEmailEvent_8_2025_09_24 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/event-8-2025-09-24.tsx";
-// import { renderEmailNewsletter_2025_05_28 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-05-28.tsx";
-// import { renderEmailNewsletter_2025_06_03 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-06-03.tsx";
-// import { renderEmailNewsletter_2025_08_27 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-08-27.tsx";
-// import { renderEmailNewsletter_2025_09_23 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-23.tsx";
-// import { renderEmailNewsletter_2025_09_30 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-09-30.tsx";
-import { renderEmailNewsletter_2025_11_13 } from "https://raw.githubusercontent.com/nn1-dev/emails/main/emails/newsletter-2025-11-13.tsx";
+import {
+  renderEmailEvent_9_2025_11_26,
+  renderEmailNewsletter_2025_11_25,
+} from "nn1Emails";
 
 import { chunkArray } from "./utils.ts";
 
@@ -27,8 +22,8 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
     subject: string;
   }
 > = {
-  "2025-11-13": {
-    template: renderEmailNewsletter_2025_11_13,
+  "2025-11-25": {
+    template: renderEmailNewsletter_2025_11_25,
     subject: "✨ NN1 Dev Club #9",
   },
 };
@@ -43,10 +38,10 @@ const TEMPLATE_MAPPER_EVENT: Record<
     subject: string;
   }
 > = {
-  // "8-2025-09-24": {
-  //   template: renderEmailEvent_8_2025_09_24,
-  //   subject: "✨ NN1 Dev Club #8: See you tomorrow!",
-  // },
+  "9-2025-11-26": {
+    template: renderEmailEvent_9_2025_11_26,
+    subject: "✨ NN1 Dev Club #9: See you tomorrow!",
+  },
 };
 
 const fetchMembersEvent = async (eventId: number) => {
