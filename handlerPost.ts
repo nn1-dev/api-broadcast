@@ -2,8 +2,8 @@ import { Resend } from "resend";
 import * as Sentry from "sentry";
 
 import {
-  renderEmailEvent_9_2025_11_26,
-  renderEmailNewsletter_2025_11_25,
+  renderEmailEvent_9_2025_11_28,
+  // renderEmailNewsletter_2025_11_25,
 } from "nn1Emails";
 
 import { chunkArray } from "./utils.ts";
@@ -22,10 +22,10 @@ const TEMPLATE_MAPPER_NEWSLETTER: Record<
     subject: string;
   }
 > = {
-  "2025-11-25": {
-    template: renderEmailNewsletter_2025_11_25,
-    subject: "✨ NN1 Dev Club #9",
-  },
+  // "2025-11-25": {
+  //   template: renderEmailNewsletter_2025_11_25,
+  //   subject: "✨ NN1 Dev Club #9",
+  // },
 };
 
 const TEMPLATE_MAPPER_EVENT: Record<
@@ -39,8 +39,8 @@ const TEMPLATE_MAPPER_EVENT: Record<
   }
 > = {
   "9-2025-11-26": {
-    template: renderEmailEvent_9_2025_11_26,
-    subject: "✨ NN1 Dev Club #9: See you tomorrow!",
+    template: renderEmailEvent_9_2025_11_28,
+    subject: "✨ NN1 Dev Club #9: Thank you!",
   },
 };
 
